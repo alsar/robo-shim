@@ -1,0 +1,11 @@
+{
+    "name": "dhimahi/robo",
+    "description": "consolidation/robo as a PHAR",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.3"
+    },
+    "bin": [
+        "robo"
+    ]
+}
