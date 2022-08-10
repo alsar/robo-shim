@@ -11,24 +11,24 @@ help : Makefile
 ## up			Start up containers.
 up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
-	docker-compose pull
-	@docker-compose up -d --remove-orphans
+	docker compose pull
+	@docker compose up -d --remove-orphans
 
 down: stop
 
 ## stop			Stop containers.
 stop:
 	@echo "Stopping containers for $(PROJECT_NAME)..."
-	@docker-compose stop
+	@docker compose stop
 
 ## start			Start containers without updating.
 start:
 	@echo "Starting containers for $(PROJECT_NAME) from where you left off..."
-	@docker-compose start
+	@docker compose start
 
 restart:
 	@echo "Restarting containers for $(PROJECT_NAME)..."
-	@docker-compose up -d --remove-orphans --build $(filter-out $@,$(MAKECMDGOALS))
+	@docker compose up -d --remove-orphans --build $(filter-out $@,$(MAKECMDGOALS))
 
 ## prune			Remove containers and their volumes.
 ##			You can optionally pass an argument with the service name to prune single container
@@ -36,7 +36,7 @@ restart:
 ##			prune nginx php	: Prune `nginx` and `php` containers and remove their volumes.
 prune:
 	@echo "Removing containers for $(PROJECT_NAME)..."
-	@docker-compose down -v
+	@docker compose down -v
 
 ## sh			Access a container via shell.
 sh:

@@ -3,7 +3,7 @@
     "description": "PHAR distribution of consolidation/robo",
     "license": "MIT",
     "require": {
-        "php": ">=7.1.3"
+        "php": ">=8.0"
     },
     "bin": [
         "robo"
