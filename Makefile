@@ -1,6 +1,6 @@
 include .env
 
-.PHONY: up down stop restart prune ps logs logs-now shell install update build-phar
+.PHONY: up down stop start restart prune sh build-phar
 
 default: up
 
@@ -31,9 +31,6 @@ restart:
 	@docker compose up -d --remove-orphans --build $(filter-out $@,$(MAKECMDGOALS))
 
 ## prune			Remove containers and their volumes.
-##			You can optionally pass an argument with the service name to prune single container
-##			prune php	: Prune `php` container and remove its volumes.
-##			prune nginx php	: Prune `nginx` and `php` containers and remove their volumes.
 prune:
 	@echo "Removing containers for $(PROJECT_NAME)..."
 	@docker compose down -v
