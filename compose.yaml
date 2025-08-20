@@ -1,5 +1,3 @@
-version: "3.2"
-
 services:
   php:
     image: wodby/php:$PHP_TAG
